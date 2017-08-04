@@ -133,7 +133,7 @@ namespace SlapPass
             Clipboard.SetContent(ClipboardData);
         }
 
-        private async void ExitButton_ClickAsync(object sender, RoutedEventArgs e)
+        private void ExitButton_ClickAsync(object sender, RoutedEventArgs e) //make it "private async void" before building in Debug mode.
         {
 #if DEBUG
             var Dialogue = new MessageDialog("Exiting now.");
