@@ -1,4 +1,4 @@
-#SlapPass
+# SlapPass
 SlapPass is a Universal Windows App designed to generate pseudo-random passwords.
 
 ## About
