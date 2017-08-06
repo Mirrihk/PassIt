@@ -1,24 +1,25 @@
-# SlapPass
-SlapPass is a Universal Windows App designed to generate pseudo-random passwords.
+# PassIt
+PassIt is a Universal Windows App designed to generate pseudo-random passwords.
 
 ## About
-"SlapPass" Stands for "Slap a Password on it".  Something which every Tech Professional will tell you we should be doing for all of our technology and accounts.  SlapPass makes the process of generating more secure passwords suited to any user's needs easier.  Simply press a button, and it's done.  You can even copy the password straight to your clipboard in-app.
-SlapPass even allows you to omit non-alphanumeric characters (such as punctuation) or ambiguous characters (such as 1, I, and l).
+PassIt uses Microsoft .NET-based pseudo-random number generation cross-referenced with a library of characters found on standard keyboards to provide a secure password of a designated length to provide enterprise-level security to your accounts...
+
+PassIt uses the latest version of [James Phillips' SlapPass password generation](https://github.com/JamesPhillipsUK/SlapPass "See it here") algorithm to provide you with as secure a password as possible. Because your peace of mind is our priority...
+
+How it's used: PassIt works at the click of a button: once the App is running on your system, simply clicking the "Generate a Password" button will start you off on your way to enterprise-level security. More advanced options are available in the menu...
 
 ## Installation
 1. Download the 'master' branch of the GitHub repository, and open the Visual Studio Solution (.sln) file in your version of Microsoft Visual Studio (Tested in Microsoft Visual Sudio 2017).
 2. Run "Build Solution" from the Build menu.
 3. It's done!
 
-I am working on getting this app available in the Windows Store, for Desktop, and Windows Phone users to make install easier, and will update when it's done.
-
 ## Release Details
-This software was released under the GNU General Public License v3.0 or later by James Phillips, 2017.  see the LICENSE file for more details.
-I accept no responsibility or liability for any loss which may be caused either directly, indirectly , or by any other means through the use of this application and its related source files.
+This software was released under the GNU General Public License v3.0 or later by TuxSoft Limited, 2017.  see the LICENSE file for more details.
+TuxSoft Limited accepts no responsibility or liability for any loss which may be caused either directly, indirectly , or by any other means through the use of this application and its related source files.
 
 ### NOTICE:
-SlapPass is a Universal Windows App designed to generate pseudo-random passwords.
-Copyright &copy; 2017  James Phillips [&lt;james@jamesphillipsuk.com&gt;](mailto:james@jamesphillipsuk.com)
+PassIt is a Universal Windows App designed to generate pseudo-random passwords.
+Copyright &copy; 2017 TuxSoft Limited [&lt;tuxsoft@tuxsoft.uk&gt;](mailto:tuxsoft@tuxsoft.uk)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
