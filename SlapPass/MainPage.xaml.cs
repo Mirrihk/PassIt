@@ -5,13 +5,9 @@ using Windows.UI.Xaml.Controls;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Popups;
 
-#if DEBUG
-using System.Diagnostics;
-#endif
-
 /*
- * SlapPass is a Universal Windows App designed to generate pseudo-random passwords.
- * Copyright (C) 2017  James Phillips <james@jamesphillipsuk.com>
+ * PassIt is a Universal Windows App designed to generate pseudo-random passwords.
+ * Copyright (C) 2017  TuxSoft Limited <tuxsoft@tuxsoft.uk>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +23,7 @@ using System.Diagnostics;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>. 
  */
 
-namespace SlapPass
+namespace PassIt
 {
     /// <summary>
     /// The Main Page of the app.  This does all of the password generation.
@@ -44,9 +40,8 @@ namespace SlapPass
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            int CharCount = 0;
 
-            bool Result = Int32.TryParse(CharNumTextBox.Text,out CharCount);
+            bool Result = Int32.TryParse(CharNumTextBox.Text, out int CharCount);
             if (!Result)
             {
                 CharCount = 16;
@@ -62,9 +57,6 @@ namespace SlapPass
 
             string InitialCreate = CreatePasswordOne(256);
             Final = CreatePasswordTwo(InitialCreate,CharCount);
-#if DEBUG
-            Debug.WriteLine(Final);
-#endif
             MessageOut();
         }
 
@@ -133,12 +125,8 @@ namespace SlapPass
             Clipboard.SetContent(ClipboardData);
         }
 
-        private void ExitButton_ClickAsync(object sender, RoutedEventArgs e) //make it "private async void" before building in Debug mode.
+        private void ExitButton_ClickAsync(object sender, RoutedEventArgs e)
         {
-#if DEBUG
-            var Dialogue = new MessageDialog("Exiting now.");
-            await Dialogue.ShowAsync();
-#endif
             Application.Current.Exit();
         }
     }

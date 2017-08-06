@@ -1,14 +1,14 @@
 ﻿<Page
-    x:Class="SlapPass.MainPage"
+    x:Class="PassIt.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SlapPass"
+    xmlns:local="using:PassIt"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 <!--
-    SlapPass is a Universal Windows App designed to generate pseudo-random passwords.
-    Copyright (C) 2017  James Phillips <james@jamesphillipsuk.com>
+    PassIt is a Universal Windows App designed to generate pseudo-random passwords.
+    Copyright (C) 2017  TuxSoft Limited <tuxsoft@tuxsoft.uk>
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
