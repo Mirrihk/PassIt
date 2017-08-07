@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-<!--
+    <!--
     PassIt is a Universal Windows App designed to generate pseudo-random passwords.
     Copyright (C) 2017  TuxSoft Limited <tuxsoft@tuxsoft.uk>
     
@@ -25,9 +25,9 @@
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="7*" />
-            <RowDefinition Height="7*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="8*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,25 +37,23 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="Logo" Grid.Row="1" Grid.Column="1" MinWidth="100" MinHeight="100" Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <TextBox x:Name="CharNumTextBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" PlaceholderText="Number of Characters (Default: 16, Min: 4, Max: 256)" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox x:Name="AlphaNumCheckBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Only use Alphanumeric Characters" Grid.Column="0"/>
-                <CheckBox x:Name="AmbiguousCheckBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Do not include Ambiguous Characters" Grid.Column="1"/>
-            </Grid>
+            <TextBox x:Name="CharNumTextBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" PlaceholderText="Number of Characters (8 - 256, Default: 16)" />
             <Button x:Name="GenerateButton" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="GenerateButton_Click" Content="Generate a Password"/>
             <TextBox x:Name="ResultTextBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" PlaceholderText="Output" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Button x:Name="CopyButton" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="CopyButton_ClickAsync" Content="Copy to Clipboard" Grid.Column="0"/>
-                <Button x:Name="ExitButton" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="ExitButton_ClickAsync" Content="Exit" Grid.Column="1"/>
-            </Grid>
         </StackPanel>
+        <CheckBox x:Name="AlphaNumCheckBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Only use Alphanumeric Characters" Grid.Column="0" Visibility="Collapsed"/>
+        <CheckBox x:Name="AmbiguousCheckBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Do not include Ambiguous Characters" Grid.Column="1" Visibility="Collapsed"/>
+        <CommandBar Grid.ColumnSpan="3" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="RepeatAll" Label="Re-Generate"  Click="GenerateButton_Click"/>
+            <AppBarButton Icon="Copy" Label="Copy Password" Click="CopyButton_ClickAsync"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Font" Label="Toggle Alphanumeric Node" Click="ToggleAlphaNum_Click"/>
+                <AppBarButton Icon="Pause" Label="Toggle Ambiguous Character Mode" Click="ToggleAmbiguous_Click"/>
+                <AppBarButton Icon="Clear" Label="Exit" Click="ExitButton_ClickAsync"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
     </Grid>
 </Page>

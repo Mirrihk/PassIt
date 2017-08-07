@@ -38,6 +38,30 @@ namespace PassIt
             this.InitializeComponent();
         }
 
+        private void ToggleAlphaNum_Click (object sender, RoutedEventArgs e)
+        {
+            if (AlphaNumCheckBox.IsChecked == true)
+            {
+                AlphaNumCheckBox.IsChecked = false;
+            }
+            else
+            {
+                AlphaNumCheckBox.IsChecked = true;
+            }
+        }
+
+        private void ToggleAmbiguous_Click(object sender, RoutedEventArgs e)
+        {
+            if (AmbiguousCheckBox.IsChecked == true)
+            {
+                AmbiguousCheckBox.IsChecked = false;
+            }
+            else
+            {
+                AmbiguousCheckBox.IsChecked = true;
+            }
+        }
+
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
 
