@@ -38,28 +38,14 @@ namespace PassIt
             this.InitializeComponent();
         }
 
-        private void ToggleAlphaNum_Click (object sender, RoutedEventArgs e)
+        private void ToggleAlpahNum_Click(object sender, RoutedEventArgs e)
         {
-            if (AlphaNumCheckBox.IsChecked == true)
-            {
-                AlphaNumCheckBox.IsChecked = false;
-            }
-            else
-            {
-                AlphaNumCheckBox.IsChecked = true;
-            }
+            AlphaNumCheckBox.IsChecked = !AlphaNumCheckBox.IsChecked;
         }
 
         private void ToggleAmbiguous_Click(object sender, RoutedEventArgs e)
         {
-            if (AmbiguousCheckBox.IsChecked == true)
-            {
-                AmbiguousCheckBox.IsChecked = false;
-            }
-            else
-            {
-                AmbiguousCheckBox.IsChecked = true;
-            }
+            AlphaNumCheckBox.IsChecked = !AlphaNumCheckBox.IsChecked;
         }
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
@@ -114,7 +100,24 @@ namespace PassIt
             return Output.ToString();
         }
 
-        public string CreatePasswordTwo(string InputString,int MaxNumber)
+        public string CreatePasswordOne(int Length, string InputString)
+        {
+            string validChars = (AlphaNumCheckBox.IsChecked, AmbiguousCheckBox.IsChecked) switch
+            {
+                (true, false) => AlphaNumChars,
+                (true, true)  => NoAmbiguousAlphaNum,
+                (false, true) => NoAmbiguousFull,
+                _             => AllChars
+            };
+
+            StringBuilder output = new StringBuilder(length);
+            for (int i = 0; i < length; i++)
+                output.Append(validChars[RandomOutput.Next(validChars.Length)]);
+
+            return output.ToString();
+        }
+
+        public string CreatePasswordTwo(string InputString, int MaxNumber)
         {
             StringBuilder Output = new StringBuilder();
             int Count = 0;
